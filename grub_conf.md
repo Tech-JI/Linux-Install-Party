@@ -4,6 +4,8 @@
 **最后更新：** 2025-05-14 (基于对话)
 **适用系统：** Fedora Linux (UEFI 引导模式)
 
+by `Gemini 2.5 Pro` & `foggystar`
+
 ## 目录
 
 1.  [引言与重要提示](#1-引言与重要提示)
@@ -128,7 +130,8 @@ menuentry 'Windows 10' --class windows --class os $menuentry_id_option 'osprober
         insmod fat
         search --no-floppy --fs-uuid --set=root YOUR_ESP_UUID
         chainloader /efi/Microsoft/Boot/bootmgfw.efi # 标准 UEFI Windows 路径
-}```
+}
+```
 *   将 `Windows 10` 替换为你想要的名称。
 *   将 `YOUR_ESP_UUID` 替换为你的 Windows EFI 系统分区 (ESP) 的文件系统 UUID (例如 `6078-2E2D`)。你可以使用 `lsblk -f` 或 `sudo blkid` 查找。
 *   **重要：** 确保此文件有执行权限：`sudo chmod +x /etc/grub.d/40_custom`。
